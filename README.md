@@ -41,7 +41,7 @@ to "start": "npm run build; webpack-dev-server --open --mode development"_
 
 ## Known Bugs
 
-* _N/A_
+* _Issue with CORS policy_
 
 ## License
 

@@ -10,7 +10,7 @@ function getElements(response, inputCurrency) {
     $('#input').text(inputCurrency);
     $('#converted').text(exchange);
   } else {
-    $('#error').text('There was an error: ${response}');
+    $('#error').text(`There was an error: ${response}`);
   }
 }
 
@@ -27,3 +27,5 @@ $(document).ready(function () {
     makeApiCall(currency, inputCurrency);
   });
 });
+
+// nonexistentCurrency
