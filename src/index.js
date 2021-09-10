@@ -5,27 +5,25 @@ import './css/styles.css';
 import currencyExchange from './currency-exchange.js';
 
 function getElements(response, inputCurrency) {
-  if (response.result === "success") {
-    let exchange = (response.conversion_rates) * inputCurrency;
+  if (response.result === 'success') {
+    let exchange = response.conversion_rates * inputCurrency;
     $('#input').text(inputCurrency);
     $('#converted').text(exchange);
   } else {
-    $('#error').text("There was an error: ${response}")
+    $('#error').text('There was an error: ${response}');
   }
 }
 
+async function makeApiCall(currency, inputCurrency) {
+  const response = await currencyExchange.getExchange(currency);
+  getElements(response, inputCurrency);
+}
+
 $(document).ready(function () {
-  let promise = currencyExchange.getExchange();
-  promise.then(function (response) {
-    $('#currency-exchanger').submit(function (event) {
-      event.preventDefault();
-      // const body = JSON.parse(response);
-      const conversion = response.conversion_rates;
-      let inputCurrency = $('#usCurrency').val();
-      let selectedRate = $('#inputConversion').val();
-      let rate = conversion[selectedRate];
-      const converter = exchanger.inputCurrency * exchanger.rate;
-      
-    });
+  $('#currency-exchanger').submit(function (event) {
+    event.preventDefault();
+    let inputCurrency = $('#usCurrency').val();
+    let currency = $('#inputConversion').val();
+    makeApiCall(currency, inputCurrency);
   });
 });
