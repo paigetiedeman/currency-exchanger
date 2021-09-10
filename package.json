@@ -27,8 +27,20 @@
     "webpack-dev-server": "3.8.0"
   },
   "dependencies": {
+    "@popperjs/core": "^2.10.1",
     "bootstrap": "^5.1.0",
     "jquery": "^3.6.0",
     "popper.js": "^1.16.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paigetiedeman/currency-exchanger.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paigetiedeman/currency-exchanger/issues"
+  },
+  "homepage": "https://github.com/paigetiedeman/currency-exchanger#readme"
 }
