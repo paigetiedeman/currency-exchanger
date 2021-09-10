@@ -4,12 +4,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import currencyExchange from './currency-exchange.js';
 
-function convertUS(inputCurrency, rate) {
-  return (inputCurrency * rate).toFixed(2);
-}
 
 $(document).ready(function () {
-  let promise = currencyExchange.getExchange(dollar);
+  let promise = currencyExchange.getExchange();
   promise.then(function (response) {
     $('#currency-exchanger').submit(function (event) {
       event.preventDefault();
@@ -18,11 +15,13 @@ $(document).ready(function () {
       let inputCurrency = $('#usCurrency').val();
       let selectedRate = $('#inputConversion').val();
       let rate = conversion[selectedRate];
-      console.log(selectedRate);
+      let exchanger = new currencyExchange(inputCurrency, rate);
+      const converter = exchanger.inputCurrency * exchanger.rate;
       $('#input').text(inputCurrency);
-      $('#converted').text(convertUS(inputCurrency, rate));
+      $('#converted').text(converter);
     });
-  })(function (error) {
-    $('#error').text('${error}');
   });
+  // (function(error) {
+  //   $('#error').text('${error}');
 });
+// });
