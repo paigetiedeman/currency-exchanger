@@ -2,12 +2,29 @@
 <html lang="en">
 
 <head>
-  <title>Title</title>
+  <title>Currency Exchange</title>
 </head>
 
 <body>
   <div id="container">
-    <h1></h1>
+    <h1>Currency Exchanger</h1>
+    <form id="currency-exchanger">
+      <div class="form-group">
+        <label for="inputCurrency">$$</label>
+        <input id="inputCurrency" type="number" min="0" placeholder="Enter $ Amount" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="inputConversion">Convert</label>
+        <select id="inputConversion" class="form-control">
+          <option>AED</option>
+          <option>AFN</option>
+          <option>ALL</option>
+        </select>
+      </div>
+        <button type="submit" class="btn btn-primary">Convert!</button>
+    </form>
+
+    <div id="error"></div>
   </div>
 </body>
 </html>
