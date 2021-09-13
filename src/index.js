@@ -4,9 +4,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import currencyExchange from './currency-exchange.js';
 
+
 function getElements(response, inputCurrency) {
+  let selectedCurrency = document.querySelector("#inputConversion select");
   if (response.result === 'success') {
-    let exchange = response.conversion_rates * inputCurrency;
+    
+    let exchange = response.conversion_rates[selectedCurrency.value] * inputCurrency;
+    console.log(exchange);
     $('#input').text(inputCurrency);
     $('#converted').text(exchange);
   } else {
@@ -14,8 +18,8 @@ function getElements(response, inputCurrency) {
   }
 }
 
-async function makeApiCall(currency, inputCurrency) {
-  const response = await currencyExchange.getExchange(currency);
+async function makeApiCall(selectedCurrency, inputCurrency) {
+  const response = await currencyExchange.getExchange(selectedCurrency);
   getElements(response, inputCurrency);
 }
 
@@ -23,8 +27,8 @@ $(document).ready(function () {
   $('#currency-exchanger').submit(function (event) {
     event.preventDefault();
     let inputCurrency = $('#usCurrency').val();
-    let currency = $('#inputConversion').val();
-    makeApiCall(currency, inputCurrency);
+    let selectedCurrency = $('#inputConversion').val();
+    makeApiCall(selectedCurrency, inputCurrency);
   });
 });
 
