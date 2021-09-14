@@ -1,7 +1,15 @@
-.showConversion{
-  display: none;
+body {
+  background: #e2ece9d2;
 }
 
-h1{
+.showConversion {
+  display: none;
   text-align: center;
+  border: 3px dashed rgba(100, 148, 237, 0.849);
+  padding-top: 8px;
+}
+
+h1 {
+  text-align: center;
+  color: cornflowerblue;
 }
