@@ -6,9 +6,8 @@ import currencyExchange from './currency-exchange.js';
 
 
 function getElements(response, inputCurrency, selectedCurrency) {
-  // let selectedCurrency = $('#inputConversion').val();
   if (response.result === 'success') {
-    let exchange = response.conversion_rates * inputCurrency;
+    const exchange = response.conversion_rate * inputCurrency;
     $('#input').text(inputCurrency);
     $('#converted').text(exchange);
     $("#selected").text(selectedCurrency);
@@ -30,5 +29,3 @@ $(document).ready(function () {
     makeApiCall(selectedCurrency, inputCurrency);
   });
 });
-
-// nonexistentCurrency
