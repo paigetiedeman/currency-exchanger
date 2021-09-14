@@ -23,7 +23,7 @@
 
 ## Description
 
-This simple HTML site uses Javascript and API keys to convert US dollars to currencies from multiple countries.
+This simple HTML site uses Javascript and ExchangeRate-API keys to convert US dollars to currencies from multiple countries in the dropdown list.
 
 ## Setup/Installation Requirements
 
@@ -38,10 +38,12 @@ to "start": "npm run build; webpack-dev-server --open --mode development"_
 * _Type `$ touch .env` to create a document to save your API key as API_KEY={your key here}_
 * _Type `$ npm run build`, to build your environment_
 * _Type `$ npm run start`, to open in your browser_
+* _Enter in an amount of US Dollars in the first input_
+* _Select your conversion rate by country code, hit convert button_
 
 ## Known Bugs
 
-* _Issue with CORS policy_
+* _N/A_
 
 ## License
 
