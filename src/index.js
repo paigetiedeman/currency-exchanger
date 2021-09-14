@@ -19,6 +19,7 @@ function getElements(response, inputCurrency, selectedCurrency) {
 async function makeApiCall(selectedCurrency, inputCurrency) {
   const response = await currencyExchange.getExchange(selectedCurrency);
   getElements(response, inputCurrency, selectedCurrency);
+  $(".showConversion").show();
 }
 
 $(document).ready(function () {

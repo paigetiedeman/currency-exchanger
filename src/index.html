@@ -8,11 +8,13 @@
 <body>
   <div class="container">
     <h1>Currency Exchanger</h1>
+    <hr>
     <form id="currency-exchanger">
       <div class="form-group">
         <label for="usCurrency">Enter a US $ Amount:</label>
         <input id="usCurrency" type="number" min="0" class="form-control">
       </div>
+      <br>
       <div class="form-group">
         <label for="inputConversion">Select Conversion:</label>
         <select id="inputConversion" class="form-control">
@@ -42,6 +44,27 @@
           <option>BYN</option>
           <option>BZD</option>
           <option>CAD</option>
+          <option>CDF</option>
+          <option>CHF</option>
+          <option>CLP</option>
+          <option>CNY</option>
+          <option>COP</option>
+          <option>CRC</option>
+          <option>CUC</option>
+          <option>CVE</option>
+          <option>CZK</option>
+          <option>DJF</option>
+          <option>DKK</option>
+          <option>DOP</option>
+          <option>DZD</option>
+          <option>EGP</option>
+          <option>ERN</option>
+          <option>ETB</option>
+          <option>EUR</option>
+          <option>FJD</option>
+          <option>FKP</option>
+          <option>FOK</option>
+          <option>GBP</option>
         </select>
       </div>
       <br>
@@ -49,7 +72,7 @@
     </form>
     <br>
     <div class="showConversion">
-      <p>$<span id="input"></span> US Dollars = <span id="converted"></span> in <span id="selected"></span></p>
+      <p><strong>$<span id="input"></span> US Dollars = <span id="converted"></span> in <span id="selected"></span></strong></p>
     </div>
     <div id="error"></div>
   </div>
